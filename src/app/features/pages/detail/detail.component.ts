@@ -1,3 +1,4 @@
+import { LocalStorageService } from './../../services/local-storage/local-storage.service';
 import { HttpService } from './../../services/http.service';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from "@angular/router";
@@ -9,28 +10,22 @@ import { FormBuilder, FormGroup, Validators } from "@angular/forms";
   styleUrls: ['./detail.component.scss']
 })
 export class DetailComponent implements OnInit {
+  public form!: FormGroup;
   id?:string;
   data:any;
   video!:any;
-  object!:any;
+  result!:[];
   bg!:string;
-  public form!: FormGroup;
   rating3: number;
+  savedItem:boolean = false;
 
 
 
   constructor(private fb: FormBuilder,
-              private router:Router,
-              private route:ActivatedRoute,
+              private router: Router,
+              private route: ActivatedRoute,
+              private localStorage:LocalStorageService,
               private videosService:HttpService) {
-                route.params.subscribe((params)=> {
-                  if(params.id)
-                  this.data = videosService.getVideoByID(params.id)
-                  .subscribe(res => {
-                    this.object = { ...res.items[0] };
-                    console.log(this.object);
-                  });
-                });
                 this.rating3 = 0;
                 this.form = this.fb.group({
                   rating: ['', Validators.required],
@@ -38,8 +33,21 @@ export class DetailComponent implements OnInit {
                 }
 
   ngOnInit(): void {
+    this.loadVideoInfo();
   }
 
+  loadVideoInfo(){
+    this.videosService.getVideoByID(this.route.snapshot.params.id)
+    .subscribe(
+      res=>{
+        this.video = res.items;
+      }
+    )
+  }
 
+  saveToFavorit(item:any){
+    this.localStorage.addVidToLocalStore(item);
+    this.savedItem = !this.savedItem;
+  }
 
 }

@@ -19,14 +19,11 @@
 }
 
 .video-cover {
-  width: 100%;
-  min-height: auto;
-  background-attachment: fixed;
-  background-size: cover;
-  background-position: center;
-  overflow: hidden;
-  height: 50vh;
-  background-repeat: no-repeat;
+  width: 100% !important;
+  background-size: cover !important;
+  height: 70vh!important;
+  background-repeat: no-repeat !important;
+  background-position: center !important;
 }
 
 .published-date {
@@ -36,4 +33,17 @@
 
 label.star {
   font-size: 10px!important;
+}
+
+
+.rating {
+  form {
+    ngx-star-rating {
+
+      label.star {
+        font-size: 18px!important;
+
+      }
+    }
+  }
 }

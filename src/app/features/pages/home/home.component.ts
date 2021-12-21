@@ -32,27 +32,12 @@ export class HomeComponent implements OnInit {
       for(let element of lista["items"]) {
         this.videos.push(element);
       }
-      console.log(this.videos)
     })
   }
-
-  // Search(){
-  //   if(this.searchTerm = "") {
-  //     this.ngOnInit()
-  //   } else {
-  //     console.log('changed');
-  //     this.videos = this.videos.filter(res => {
-  //       return res.title.toLocaleLowerCase().match(this.searchTerm.toLocaleLowerCase())
-  //     });
-  //     // let name = this.videos.filter(item => item.title);
-  //     // return name.toLocalLowerCase().match(this.searchTerm.toLocaleLowerCase())
-  //   }
-  // }
 
   // Sorting Data
 
   sort(key:string){
-    // console.log('changed');
     this.key = key;
     this.reverse = !this.reverse;
   }

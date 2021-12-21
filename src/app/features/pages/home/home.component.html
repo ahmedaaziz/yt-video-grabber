@@ -45,7 +45,7 @@
       <tbody>
         <tr *ngFor="let video of videos | orderBy: key:reverse | filter:searchTerm | paginate: { itemsPerPage: 10, currentPage: p } ">
           <td>
-            <img [src]="video.snippet.thumbnails.default.url" alt="...">
+            <img [src]="video.snippet.thumbnails.high.url" alt="...">
           </td>
           <td>{{video.snippet.title}}</td>
           <td>{{video.snippet.publishedAt | customDate  }} </td>

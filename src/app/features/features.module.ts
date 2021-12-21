@@ -9,7 +9,6 @@ import { CustomDatePipe } from './pipes/customDate/custom-date.pipe';
 import { NgxPaginationModule } from "ngx-pagination";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { Ng2OrderModule } from "ng2-order-pipe";
-import { YtDurationPipe } from './pipes/yt-duration/yt-duration.pipe';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { NgxStarRatingModule } from "ngx-star-rating";
 
@@ -21,7 +20,6 @@ import { NgxStarRatingModule } from "ngx-star-rating";
     HomeComponent,
     DetailComponent,
     CustomDatePipe,
-    YtDurationPipe,
   ],
   exports:[
     HeaderComponent,
