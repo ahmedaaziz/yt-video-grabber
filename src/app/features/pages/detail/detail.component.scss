@@ -1,0 +1,39 @@
+.video-info-border {
+  border: 1px solid #cacaca;
+  border-left: 0;
+  border-right: 0;
+}
+
+.btn-video {
+    background: #c51919;
+    color: #fff;
+    border: 1px solid #cacaca;
+    border-radius: 0;
+    padding: 10px 30px;
+    transition: all ease-in-out 0.2s;
+    &:hover {
+      background-color: #fff;
+      color: #c51919;
+      ;
+    }
+}
+
+.video-cover {
+  width: 100%;
+  min-height: auto;
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+  overflow: hidden;
+  height: 50vh;
+  background-repeat: no-repeat;
+}
+
+.published-date {
+  color: #c51919;
+  font-weight: 500;
+}
+
+label.star {
+  font-size: 10px!important;
+}

@@ -1,1 +1,13 @@
 /* You can add global styles to this file, and also import other style files */
+.btn-video {
+    background: #fff;
+    color: #000;
+    border: 1px solid #cacaca;
+    border-radius: 0;
+    padding: 10px 30px;
+    transition: all ease-in-out 0.2s;
+    &:hover {
+      background-color: #c51919;
+      color: #fff;
+    }
+}

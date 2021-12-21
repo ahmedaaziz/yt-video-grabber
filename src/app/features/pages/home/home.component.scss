@@ -1,0 +1,51 @@
+table {
+  text-transform: uppercase;
+  font-weight: 500;
+  td {
+    vertical-align: middle;
+    padding-bottom: 5px;
+    img {
+      width: 150px;
+      border-radius: 5px;
+      border: 2px solid #000;
+    }
+    button {
+      background: #fff;
+      color: #000;
+      border: 1px solid #cacaca;
+      border-radius: 0;
+      padding: 10px 30px;
+      transition: all ease-in-out 0.2s;
+      &:hover {
+        background-color: #c51919;
+        color: #fff;
+      }
+    }
+  }
+
+  tr {
+    &:hover {
+      background: #dbdbdb;
+    }
+
+  }
+
+}
+form {
+  position: relative;
+  input[type=search] {
+    border-radius: 20px;
+    position: relative;
+    padding-left: 40px;
+    &::placeholder {
+      // padding: 15px;
+    }
+  }
+  button[type=submit]{
+    position: absolute;
+    border: 0;
+    background-color: transparent;
+    margin: 10px;
+    color: #999999;
+  }
+}

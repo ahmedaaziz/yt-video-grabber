@@ -2,8 +2,9 @@
   "name": "youtube-video-grabber",
   "version": "0.0.0",
   "scripts": {
+    "heroku-build": "ng build --aot",
     "ng": "ng",
-    "start": "ng serve",
+    "start": "node server.js",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
@@ -18,6 +19,14 @@
     "@angular/platform-browser": "~12.1.1",
     "@angular/platform-browser-dynamic": "~12.1.1",
     "@angular/router": "~12.1.1",
+    "bootstrap": "^4.6.1",
+    "express": "^4.17.2",
+    "ng-starrating": "^1.0.20",
+    "ng2-order-pipe": "^0.1.5",
+    "ng2-search-filter": "^0.5.1",
+    "ngx-pagination": "^5.1.1",
+    "ngx-spinner": "^8.1.0",
+    "ngx-star-rating": "^2.1.0",
     "rxjs": "~6.6.0",
     "tslib": "^2.2.0",
     "zone.js": "~0.11.4"
@@ -35,5 +44,9 @@
     "karma-jasmine": "~4.0.0",
     "karma-jasmine-html-reporter": "^1.5.0",
     "typescript": "~4.3.2"
+  },
+  "engines": {
+    "node": "14.15.4",
+    "npm": "6.14.14"
   }
 }

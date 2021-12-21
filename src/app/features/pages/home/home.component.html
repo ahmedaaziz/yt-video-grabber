@@ -1,0 +1,77 @@
+<div class="container-fluid px-5">
+  <div class="row">
+    <div class="col-12 d-flex justify-content-end mt-3">
+      <div class="search-bar">
+        <form class="form-inline my-2 my-lg-0">
+          <input class="form-control mr-sm-2"
+          type="search"
+          name='searchText'
+          placeholder="Search by video title"
+          [(ngModel)]='searchTerm'
+          aria-label="Search">
+
+          <button class="my-2 my-sm-0" type="submit">
+            <i class="fa fa-search"></i>
+          </button>
+        </form>
+
+      </div>
+    </div>
+  </div>
+  <div class="row">
+
+    <!-- <ngx-spinner></ngx-spinner> -->
+    <table class="table mt-5 text-center border">
+      <thead>
+        <tr>
+          <th scope="col">&nbsp;</th>
+          <th scope="col">
+            <a href="#"
+            (click)="sort('video.snippet.title')">
+              <i class="fa fa-sort"></i>
+              Title
+            </a>
+          </th>
+          <th scope="col">
+            <a href="#"
+            (click)="sort('video.snippet.publishedAt')"><i class="fa fa-sort"></i>
+              Publish Date
+            </a>
+          </th>
+          <th scope="col">
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let video of videos | orderBy: key:reverse | filter:searchTerm | paginate: { itemsPerPage: 10, currentPage: p } ">
+          <td>
+            <img [src]="video.snippet.thumbnails.default.url" alt="...">
+          </td>
+          <td>{{video.snippet.title}}</td>
+          <td>{{video.snippet.publishedAt | customDate  }} </td>
+          <td>
+            <button
+            type="button"
+            class="btn btn-danger"
+            routerLink="/video/{{video.id.videoId}}"
+            >Details</button>
+          </td>
+        </tr>
+        <!-- <tr *ngFor="let video of videos | orderBy: key:reverse" >
+          <td>
+            <img src="/assets/images/hqdefault.jpg" alt="" srcset="">
+          </td>
+          <td>{{video.title}}</td>
+          <td>{{video.date | customDate}}</td>
+        </tr> -->
+
+      </tbody>
+    </table>
+
+  </div>
+  <div class="row">
+    <div class="col-md-6 offset-md-6 col-12 text-right">
+      <pagination-controls (pageChange)="p = $event"></pagination-controls>
+    </div>
+  </div>
+</div>
